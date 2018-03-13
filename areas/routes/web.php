@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// 接口组定义
+Route::group(['prefix' => 'api'], function (){
+    Route::post('getAreasList', 'AreasController@getList');
+
+});
+Route::get('/areas', 'AreasController@index');
